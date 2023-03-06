@@ -20,9 +20,17 @@ public class Car {
         return this.maxCapacity - this.passengersOnboard.size(); 
     }
 
+    private boolean seatsAvailable(){
+        return this.maxCapacity > this.passengersOnboard.size();
+    }
+
     //addPassenger() - make sure enough seats; runtime exception
     public void addPassenger(Passenger p){
-        this.passengersOnboard.add(p);
+        if(seatsAvailable()){
+            this.passengersOnboard.add(p);
+        } else{
+            throw new RuntimeException("Not enough seats in car.");
+        }
     }
 
     //removePassenger() - make sure they're actually on board first, if problem, runtime exception
@@ -32,21 +40,23 @@ public class Car {
         } else{
             throw new RuntimeException("Passenger is not onboard.");
         }
-    
     }
 
 
-   public ArrayList printManifest(){} //ArrayList?
+   public void printManifest(){
+        if(this.passengersOnboard.size() > 0){
+            for(Passenger p : passengersOnboard){
+                System.out.println(p.getName());
+            }
+            
+        } else{
+            System.out.println("This car is empty.");
+        }
+        
+   } //ArrayList?
         // this car is empty if nothing in there
         // print list of all passengers currently aboard the car
 
-    public static void main(String[] args) {
-        Car myCar = new Car(25);
-        try {
-            addPassenger(p);
-            }
-        } catch (Exception e) {
-                System.err.println(e.getMessage()); // Out of fuel
-        }
-        }
+
+// make a main function to test? make a car, make a passenger to board, manifest
 }
