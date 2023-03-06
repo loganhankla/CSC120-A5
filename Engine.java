@@ -32,6 +32,8 @@ public class Engine {
         this.currentFuelLevel = this.currentFuelLevel * .9;
         System.out.print("Current Fuel Level is", this.currentFuelLevel, 
         ". Maximum Fuel Level is", this.maxFuelLevel);
+
+        //if fuel level not above 0, throw runtime exception
     }
 
 
@@ -41,3 +43,9 @@ public static void main() {
 }
 
 }
+
+
+/// Questions
+// go() - how to do runtime exception
+// check refuel and go() methods
+// check accessors
