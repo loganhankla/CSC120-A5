@@ -5,12 +5,15 @@ public class Engine {
     private double currentFuelLevel;
 
     private double maxFuelLevel;
-// fuel type
-// capcity
-// current level
 
 //accessors
-//getFuelLevel()? others? getFuelType
+    public getFuelLevel(){ //check
+        this.currentFuelLevel;
+    }
+
+    public getFuelType(){ //check
+        this.f;
+    }
 
 //constructor
     public Engine(FuelType f, double fuel){
@@ -19,23 +22,22 @@ public class Engine {
         this.maxFuelLevel= fuel;
     }
 
-//refuel
+//refuel //check
     public void refuel(){
         this.currentFuelLevel = this.maxFuelLevel;
     }
 
-//go() to modify fuel level
+//go() to modify fuel level //check
     public void go(){
-
+        this.currentFuelLevel = this.currentFuelLevel * .9;
+        System.out.print("Current Fuel Level is", this.currentFuelLevel, 
+        ". Maximum Fuel Level is", this.maxFuelLevel);
     }
-
 
 
 //main function just for testing
 public static void main() {
     Engine myEngine = Engine(FuelType.ELECTRIC, 100.0);
-
-
 }
 
 }
