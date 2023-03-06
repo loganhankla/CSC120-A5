@@ -1,3 +1,8 @@
+/**
+ * @param
+ * @throws
+ */
+
 public class Engine {
 
     private FuelType f;
@@ -29,7 +34,7 @@ public class Engine {
         //if fuel level not above 0, throw runtime exception
         if(this.currentFuelLevel > 0){
             this.currentFuelLevel -= 10;
-            System.out.print("Current Fuel Level is" + this.currentFuelLevel + 
+            System.out.println("Current Fuel Level is" + this.currentFuelLevel + 
             ". Maximum Fuel Level is" + this.maxFuelLevel);
         } else{
             throw new RuntimeException("Fuel Tank Empty.");
@@ -39,18 +44,15 @@ public class Engine {
 
 
 //main function just for testing
-public static void main() {
+public static void main(String[] args) {
     Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0);
-    while(true){
-        try{myEngine.go();}
-        catch(Exception e){myEngine.refuel();}
+    try {
+        while (true) {
+            myEngine.go();
+        }
+    } catch (Exception e) {
+        System.err.println(e.getMessage()); // Out of fuel
     }
-    myEngine.getFuelLevel();
 }
 
 }
-
-
-///Questions
-// how to use/test out the main() function
-// line 48

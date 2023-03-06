@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Car {
     private ArrayList<Passenger> passengersOnboard; //manually set limit on number aboard
@@ -6,32 +6,47 @@ public class Car {
 
     //constructor
     public Car(int max){
+        //take in initial value for max capacity
         this.maxCapacity = max;
-        //take in initial value for max capacity & make appropriately sized Array List
+        //& make appropriately sized Array List
+        this.passengersOnboard = new ArrayList<Passenger>();
     }
     
-    public int getCapacity(){ //check
+    public int getCapacity(){ 
         return this.maxCapacity;
     }
 
-    public int seatsRemaining(){
-
+    public int seatsRemaining(){ 
+        return this.maxCapacity - this.passengersOnboard.size(); 
     }
 
-    // current passengers
-
     //addPassenger() - make sure enough seats; runtime exception
-    private int addPassenger(){
-
+    public void addPassenger(Passenger p){
+        this.passengersOnboard.add(p);
     }
 
     //removePassenger() - make sure they're actually on board first, if problem, runtime exception
-    private int removePassenger(){
-        
+    public void removePassenger(Passenger p){
+        if(this.passengersOnboard.contains(p)){
+            this.passengersOnboard.remove(p);
+        } else{
+            throw new RuntimeException("Passenger is not onboard.");
+        }
+    
     }
 
 
-    //printManifest()
+   public ArrayList printManifest(){} //ArrayList?
         // this car is empty if nothing in there
         // print list of all passengers currently aboard the car
+
+    public static void main(String[] args) {
+        Car myCar = new Car(25);
+        try {
+            addPassenger(p);
+            }
+        } catch (Exception e) {
+                System.err.println(e.getMessage()); // Out of fuel
+        }
+        }
 }
