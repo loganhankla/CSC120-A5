@@ -20,12 +20,11 @@ public class Engine {
         this.maxFuelLevel= fuel;
     }
 
-//refuel 
     public void refuel(){
         this.currentFuelLevel = this.maxFuelLevel;
     }
 
-//go() to modify fuel level //check
+//go() to modify fuel level
     public void go(){
         //if fuel level not above 0, throw runtime exception
         if(this.currentFuelLevel > 0){
@@ -41,7 +40,7 @@ public class Engine {
 
 //main function just for testing
 public static void main() {
-    Engine myEngine(FuelType.ELECTRIC, 100.0);
+    Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0);
     while(true){
         try{myEngine.go();}
         catch(Exception e){myEngine.refuel();}

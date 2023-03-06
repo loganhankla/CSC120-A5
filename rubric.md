@@ -18,7 +18,7 @@ __YES___ 1 pt: The `Engine` class contains appropriately-encapsulated attributes
 
 __YES___ 1 pt: The `Engine` class has a functional constructor
 
-_____ 1 pt: The `Engine` class has `refuel()` and `go()` methods that correctly modify the fuel level
+__YES___ 1 pt: The `Engine` class has `refuel()` and `go()` methods that correctly modify the fuel level
 
 ### Level 2 (3 pts)
 
