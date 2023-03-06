@@ -1,18 +1,16 @@
 public class Engine {
 
     private FuelType f;
-
     private double currentFuelLevel;
-
     private double maxFuelLevel;
 
-//accessors
-    public getFuelLevel(){ //check
-        this.currentFuelLevel;
+    //accessors
+    public double getFuelLevel(){ 
+        return this.currentFuelLevel;
     }
 
-    public getFuelType(){ //check
-        this.f;
+    public FuelType getFuelType(){
+        return this.f;
     }
 
 //constructor
@@ -22,33 +20,33 @@ public class Engine {
         this.maxFuelLevel= fuel;
     }
 
-//refuel //check
+//refuel 
     public void refuel(){
         this.currentFuelLevel = this.maxFuelLevel;
     }
 
 //go() to modify fuel level //check
     public void go(){
-        this.currentFuelLevel = this.currentFuelLevel * .9;
-        System.out.print("Current Fuel Level is", this.currentFuelLevel, 
-        ". Maximum Fuel Level is", this.maxFuelLevel);
-
         //if fuel level not above 0, throw runtime exception
+        if(this.currentFuelLevel > 0){
+            this.currentFuelLevel -= 10;
+            System.out.print("Current Fuel Level is" + this.currentFuelLevel + 
+            ". Maximum Fuel Level is" + this.maxFuelLevel);
+        } else{
+            throw new RuntimeException("Fuel Tank Empty.");
+        }
+
     }
 
 
 //main function just for testing
 public static void main() {
-    Engine myEngine = Engine(FuelType.ELECTRIC, 100.0);
-    go();
-    getFuelLevel();
+    Engine myEngine(FuelType.ELECTRIC, 100.0);
+    while(true){
+        try{myEngine.go();}
+        catch(Exception e){myEngine.refuel();}
+    }
+    myEngine.getFuelLevel();
 }
 
-
-
 }
-
-/// Questions
-// go() - how to do runtime exception
-// check refuel and go() methods
-// check accessors
