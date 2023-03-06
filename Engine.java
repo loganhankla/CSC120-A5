@@ -40,10 +40,13 @@ public class Engine {
 //main function just for testing
 public static void main() {
     Engine myEngine = Engine(FuelType.ELECTRIC, 100.0);
+    go();
+    getFuelLevel();
 }
 
-}
 
+
+}
 
 /// Questions
 // go() - how to do runtime exception
