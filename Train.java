@@ -6,7 +6,9 @@ public class Train {
 
     // constructor
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
-        Engine engine = new Engine(FuelType.ELECTRIC, 100.0);
+        Engine engine = new Engine(fuelType, fuelCapacity);
+        this.carsAttached = new ArrayList<Car>(nCars);
+
         Car car1 = new Car(20);
         Car car2 = new Car(20);
     }
@@ -15,12 +17,16 @@ public class Train {
         return this.engine; 
     }
 
-    public Car getCar(int i){
+    public Car getCar(int i){ //check
         //return i'th car
+        return carsAttached[i];
     }
 
     public int getMaxCapacity(){
         //return max total capacity across all Cars
+        //for(i in carsAttached){
+
+       // }
     }
 
     public int seatsRemaining(){
