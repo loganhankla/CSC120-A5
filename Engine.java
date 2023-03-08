@@ -14,6 +14,10 @@ public class Engine {
         return this.currentFuelLevel;
     }
 
+    public double getMaxFuelLevel(){
+        return this.maxFuelLevel;
+    }
+
     public FuelType getFuelType(){
         return this.f;
     }
