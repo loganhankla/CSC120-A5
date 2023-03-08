@@ -6,11 +6,12 @@ public class Train {
 
     // constructor
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
-        Engine engine = new Engine(fuelType, fuelCapacity);
+        engine = new Engine(fuelType, fuelCapacity);
         this.carsAttached = new ArrayList<Car>(nCars);
+        for(int i = 0; i < nCars; i++){
+            Car car = new Car(passengerCapacity);
+        }
 
-        Car car1 = new Car(20);
-        Car car2 = new Car(20);
     }
 
     public Engine getEngine(){
@@ -19,7 +20,7 @@ public class Train {
 
     public Car getCar(int i){ //check
         //return i'th car
-        return carsAttached[i];
+        return carsAttached.get(i);
     }
 
     public int getMaxCapacity(){
