@@ -9,4 +9,15 @@ public class Passenger {
     public String getName(){
         return this.name;
     }
+
+    public void boardCar(Car c){
+        c.addPassenger(this);
+        // catch Runtime Exception from addPassenger
+    }
+
+    public void getOffCar(Car c){
+        c.removePassenger(this);
+        // catch runtime exception
+    
+    }
 }
