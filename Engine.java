@@ -37,9 +37,9 @@ public class Engine {
     public void go(){
         //if fuel level not above 0, throw runtime exception
         if(this.currentFuelLevel > 0){
-            this.currentFuelLevel -= 10;
-            System.out.println("Current Fuel Level is" + this.currentFuelLevel + 
-            ". Maximum Fuel Level is" + this.maxFuelLevel);
+            this.currentFuelLevel -= 5;
+            System.out.println("Current Fuel Level is " + this.currentFuelLevel + 
+            ". Maximum Fuel Level is " + this.maxFuelLevel);
         } else{
             throw new RuntimeException("Fuel Tank Empty.");
         }
