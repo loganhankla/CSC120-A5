@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Car {
-    private ArrayList<Passenger> passengersOnboard; //manually set limit on number aboard
+    private ArrayList<Passenger> passengersOnboard; 
     private int maxCapacity;
 
     //constructor
@@ -20,20 +20,20 @@ public class Car {
         return this.maxCapacity - this.passengersOnboard.size(); 
     }
 
-    private boolean seatsAvailable(){
+    private boolean seatAvailable(){
         return this.maxCapacity > this.passengersOnboard.size();
     }
 
-    //addPassenger() - make sure enough seats; runtime exception
+    //addPassenger - make sure enough seats
     public void addPassenger(Passenger p){
-        if(seatsAvailable()){
+        if(seatAvailable()){
             this.passengersOnboard.add(p);
         } else{
             throw new RuntimeException("Not enough seats in car.");
         }
     }
 
-    //removePassenger() - make sure they're actually on board first, if problem, runtime exception
+    //removePassenger() - make sure they're actually on board first
     public void removePassenger(Passenger p){
         if(this.passengersOnboard.contains(p)){
             this.passengersOnboard.remove(p);
@@ -53,10 +53,13 @@ public class Car {
             System.out.println("This car is empty.");
         }
         
-   } //ArrayList?
-        // this car is empty if nothing in there
-        // print list of all passengers currently aboard the car
+   } 
 
+public static void main(String[] args) {
+    Car myCar = new Car(15);
+    myCar.getCapacity();
+    myCar.addPassenger(); // what input should addPassenger() get? string?
 
+}
 // make a main function to test? make a car, make a passenger to board, manifest
 }
