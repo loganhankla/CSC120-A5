@@ -6,7 +6,7 @@ public class Train {
 
     // constructor
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
-        engine = new Engine(fuelType, fuelCapacity);
+        this.engine = new Engine(fuelType, fuelCapacity);
         this.carsAttached = new ArrayList<Car>(nCars);
         for(int i = 0; i < nCars; i++){
             Car car = new Car(passengerCapacity);
