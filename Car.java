@@ -1,6 +1,8 @@
 /**
+ * Filename: Car.java
+ * Description: The Car class creates cars, stores information about capacity and passengers.
  * @author Logan Hankla
- * The Car class creates cars, stores information about capacity and passengers.
+ * Date: 8 March 2023
  */
 
 import java.util.ArrayList;
