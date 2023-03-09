@@ -55,15 +55,14 @@ public class Car {
         
    } 
 
-public static void main(String[] args) {
-    Car myCar = new Car(15);
-    Passenger pass1 = new Passenger("Logan");
-    Passenger pass2 = new Passenger("Madeleine");
-    //System.out.println(pass1);
-    myCar.getCapacity();
-    myCar.addPassenger(pass1); // what input should addPassenger() get? string?
-   // myCar.removePassenger(pass2);
-    myCar.printManifest();
-}
-// make a main function to test? make a car, make a passenger to board, manifest
+    public static void main(String[] args) {
+        Car myCar = new Car(15);
+        Passenger pass1 = new Passenger("Logan");
+        Passenger pass2 = new Passenger("Madeleine");
+        //System.out.println(pass1);
+        myCar.getCapacity();
+        myCar.addPassenger(pass1); 
+        // myCar.removePassenger(pass2);
+        myCar.printManifest();
+    }
 }

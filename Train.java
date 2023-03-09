@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-import javax.swing.text.PasswordView;
-
 public class Train {
     private final Engine engine; 
     private ArrayList<Car> carsAttached;
@@ -20,12 +18,12 @@ public class Train {
         return this.engine; 
     }
 
-    public Car getCar(int i){ //check
+    public Car getCar(int i){ 
         //return i'th car
         return this.carsAttached.get(i);
     }
 
-    public int getMaxCapacity(){ //check???
+    public int getMaxCapacity(){ 
         //return max total capacity across all Cars
         int totalCap = 0;
         for(int i = 0; i < carsAttached.size(); i++){
@@ -34,7 +32,7 @@ public class Train {
         return totalCap;
     }
 
-    public int seatsRemaining(){ //check
+    public int seatsRemaining(){ 
         int totalRemaining = 0;
         for(int i = 0; i < carsAttached.size(); i++){
             totalRemaining += carsAttached.get(i).seatsRemaining();
@@ -58,8 +56,8 @@ public class Train {
         pass.boardCar(myTrain.getCar(2));
         myTrain.getCar(2);
         myTrain.getEngine();
-        myTrain.getMaxCapacity();
-        myTrain.seatsRemaining();
+        System.out.println(myTrain.getMaxCapacity());
+        System.out.println(myTrain.seatsRemaining());
         myTrain.printManifest();
     }
 

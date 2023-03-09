@@ -26,19 +26,18 @@ public class Passenger {
         // catch runtime exception
     }
 
-    ///main not done
-public static void main(String[] args) {
-    Passenger pass3 = new Passenger("Adrienne");
-    Passenger pass4 = new Passenger("Amelia");
-    Car c = new Car(20);
-    pass3.boardCar(c);
-    //pass4.boardCar(c);
-    System.out.println(pass3.getName());
-    c.printManifest();
-    pass3.getOffCar(c);
-    c.printManifest();
+    public static void main(String[] args) {
+        Passenger pass3 = new Passenger("Adrienne");
+        Passenger pass4 = new Passenger("Amelia");
+        Car c = new Car(20);
+        pass3.boardCar(c);
+        //pass4.boardCar(c);
+        System.out.println(pass3.getName());
+        c.printManifest();
+        pass3.getOffCar(c);
+        c.printManifest();
     
-}
+    }
 
 }
 
