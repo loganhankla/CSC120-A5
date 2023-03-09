@@ -36,6 +36,7 @@ public class Car {
 
     /**Adds a passenger to a car.
      * @param p The passenger
+     * @throws RuntimeException
      */
     //addPassenger - make sure enough seats
     public void addPassenger(Passenger p){
@@ -49,6 +50,7 @@ public class Car {
 
     /** Removes a passenger from a car if they are onboard.
      * @param p The passenger
+     * @throws RuntimeException
      */
     public void removePassenger(Passenger p){
         if(this.passengersOnboard.contains(p)){
