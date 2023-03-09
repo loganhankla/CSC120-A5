@@ -34,14 +34,10 @@ public class Train {
         //return number of remaining open seats across all Cars 
     }
 
-    public void printManifest(){
+    public void printManifest(){ //check
         // print onboard Passengers - can use Cars'?
         for(int i = 0; i < carsAttached.size(); i++){
             Car.printManifest();
         }
     }
-
-    // composition with Engine; maybe won't run without?
-    //aggregation with Cars
-    // association with Passengers
 }
