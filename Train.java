@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javax.swing.text.PasswordView;
+
 public class Train {
     private final Engine engine; 
     private ArrayList<Car> carsAttached;
@@ -10,43 +12,54 @@ public class Train {
         this.carsAttached = new ArrayList<Car>(nCars);
         for(int i = 0; i < nCars; i++){
             Car car = new Car(passengerCapacity);
+            this.carsAttached.add(car);
         }
-
     }
 
-    public Engine getEngine(){ //check
+    public Engine getEngine(){ 
         return this.engine; 
     }
 
     public Car getCar(int i){ //check
         //return i'th car
-        return carsAttached.get(i);
+        return this.carsAttached.get(i);
     }
 
     public int getMaxCapacity(){ //check???
         //return max total capacity across all Cars
+        int totalCap = 0;
         for(int i = 0; i < carsAttached.size(); i++){
-            return Car.getCapacity(); //add max of each?
+            totalCap += carsAttached.get(i).getCapacity(); 
         }
+        return totalCap;
     }
 
     public int seatsRemaining(){ //check
+        int totalRemaining = 0;
+        for(int i = 0; i < carsAttached.size(); i++){
+            totalRemaining += carsAttached.get(i).seatsRemaining();
+        }
+        return totalRemaining;
+        
         //return number of remaining open seats across all Cars 
     }
 
     public void printManifest(){ //check
-        // print onboard Passengers - can use Cars'?
         for(int i = 0; i < carsAttached.size(); i++){
-            Car.printManifest();
+           // if() could do if else to not print if empty
+            
+            carsAttached.get(i).printManifest();
         }
     }
 
     public static void main(String[] args) {
         Train myTrain = new Train(FuelType.ELECTRIC, 50, 5, 20);
+        Passenger pass = new Passenger("Lee");
+        pass.boardCar(myTrain.getCar(2));
         myTrain.getCar(2);
         myTrain.getEngine();
         myTrain.getMaxCapacity();
-        //myTrain.seatsRemaining();
+        myTrain.seatsRemaining();
         myTrain.printManifest();
     }
 
