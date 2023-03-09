@@ -14,7 +14,7 @@ public class Train {
 
     }
 
-    public Engine getEngine(){
+    public Engine getEngine(){ //check
         return this.engine; 
     }
 
@@ -23,19 +23,22 @@ public class Train {
         return carsAttached.get(i);
     }
 
-    public int getMaxCapacity(){
+    public int getMaxCapacity(){ //check???
         //return max total capacity across all Cars
-        //for(i in carsAttached){
-
-       // }
+        for(int i = 0; i < carsAttached.size(); i++){
+            return car.getCapacity(); //add max of each?
+        }
     }
 
-    public int seatsRemaining(){
-        //return number of remaining open seats across all Cars
+    public int seatsRemaining(){ //check
+        //return number of remaining open seats across all Cars 
     }
 
     public void printManifest(){
         // print onboard Passengers - can use Cars'?
+        for(int i = 0; i < carsAttached.size(); i++){
+            Car.printManifest();
+        }
     }
 
     // composition with Engine; maybe won't run without?

@@ -24,13 +24,13 @@ public class Passenger {
             System.err.println(e.getMessage());
         }
         // catch runtime exception
-    
     }
 
     ///main not done
 //public static void main(String[] args) {
   //  Passenger pass3 = new Passenger("Adrienne");
     //pass3.boardCar(myCar);
+    
 //}
 
 }
