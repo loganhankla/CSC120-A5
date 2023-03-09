@@ -2,7 +2,7 @@ public class Passenger {
     
     private String name;
 
-    public Passenger(String name) {
+    public Passenger(String name) { //?
         this.name = name;
     }
 
@@ -30,6 +30,10 @@ public class Passenger {
 //public static void main(String[] args) {
   //  Passenger pass3 = new Passenger("Adrienne");
     //pass3.boardCar(myCar);
+   // pass3.Passenger();
+  //  pass3.getName();
+    //pass3.boardCar(2);
+    //pass3.getOffCar(2);
     
 //}
 
