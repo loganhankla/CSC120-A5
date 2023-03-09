@@ -26,7 +26,7 @@ public class Train {
     public int getMaxCapacity(){ //check???
         //return max total capacity across all Cars
         for(int i = 0; i < carsAttached.size(); i++){
-            return car.getCapacity(); //add max of each?
+            return Car.getCapacity(); //add max of each?
         }
     }
 
@@ -40,4 +40,14 @@ public class Train {
             Car.printManifest();
         }
     }
+
+    public static void main(String[] args) {
+        Train myTrain = new Train(FuelType.ELECTRIC, 50, 5, 20);
+        myTrain.getCar(2);
+        myTrain.getEngine();
+        myTrain.getMaxCapacity();
+        //myTrain.seatsRemaining();
+        myTrain.printManifest();
+    }
+
 }
